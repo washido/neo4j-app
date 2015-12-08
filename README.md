@@ -62,8 +62,16 @@ WHERE
 RETURN n
 ```
 
+
+
+
+The symbol `--` means related to, without regard to type or direction of the relationship.
+
+
 Third party scripts:
 
 - http://jquery.eisbehr.de/lazy/
 
 - http://www.listjs.com/
+
+- https://www.iconfinder.com/iconsets/iconic-1

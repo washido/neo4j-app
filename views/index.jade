@@ -1,20 +1,30 @@
 extends layout
-
+  
 block content
-  h1= title
-  p Welcome to #{title}
-  
-  span Select your 
-  a(href="/media/Movie") Movies
-  a(href="/media/Song") Songs
-  a(href="/media/Book") Books
 
+  h1.js-title.text-center WHAT SHOULD I 
+    span.js-default DO
+    span.js-title-action(data-type="movie") WATCH
+    span.js-title-action(data-type="song") LISTEN
+    span.js-title-action(data-type="book") READ
+    span ?
   
-  hr
+  .row.select-type
+    .col-xs-4.col-md-2.col-md-offset-3
+      a(href="/recommend/Book", data-type="book").btn.btn-success.js-action
+        <svg height="120px" width="120px" style="enable-background:new 0 0 32 28;" version="1.1" viewBox="0 0 32 28" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="book_x5F_alt2"><path d="M16,4c0,0-4-4-16-4v24c12.125,0,16,4,16,4s3.875-4,16-4V0C20,0,16,4,16,4z M4,4   c5.084,0.426,8.203,1.602,10,2.555v16.109c-1.797-0.949-4.916-2.125-10-2.555V4z M28,20.109c-5.086,0.43-8.205,1.605-10,2.555   V6.555C19.795,5.602,22.914,4.426,28,4V20.109z" style="fill:#FFF;"/></g></svg>
+    .col-xs-4.col-md-2
+      a(href="/recommend/Movie", data-type="movie").btn.btn-danger.js-action 
+        <svg height="120px" width="120px" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="movie"><path d="M27.977,8h-3.949L28,4.016L24.074,0h-5.566l3.988,3.984L18.41,8h-4.723l4.059-3.984L13.734,0H8.078   l3.984,3.984L7.977,8H3.969l4.062-3.984L4.016,0H0v32h32V0h-3.922L32,4L27.977,8z M28,27.957H4v-4h24V27.957z M28,20H4v-4h24V20z" style="fill:#FFF;"/></g></svg>
+    .col-xs-4.col-md-2
+      a(href="/recommend/Song", data-type="song").btn.btn-primary.js-action
+        <svg height="120px" width="120px" style="enable-background:new 0 0 32 28;" version="1.1" viewBox="0 0 32 28" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1"/><g id="headphones"><path d="M30,16h-2v-4c0-6.625-5.375-12-12-12S4,5.375,4,12v4H2c-1.105,0-2,0.895-2,2v8c0,1.105,0.895,2,2,2   h6V16v-4c0-4.414,3.586-8,8-8s8,3.586,8,8v4v12h6c1.105,0,2-0.895,2-2v-8C32,16.895,31.105,16,30,16z" style="fill:#FFF;"/></g></svg>
 
-  h1 recommend me
-  a(href="/recommend/Movie") Movies
-
-  a(href="/recommend/Song") Songs
-  
-  a(href="/recommend/Book") Books
+  script.
+    $(function(){
+      $('.js-action').on('mouseover', function(){
+        var type =  $(this).attr('data-type');
+        $('.js-title').removeClass('movie').removeClass('book').removeClass('song');
+        $('.js-title').addClass(type);
+      });
+    });

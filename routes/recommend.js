@@ -11,7 +11,7 @@ router.get('/:type', function(req, res, next) {
     }
     else{ 
       res.render('media/index', { 
-        title: 'RECOMMENDED ' + type.toUpperCase() + 'S FOR YOU',
+        title: type.toUpperCase() + 'S RECOMMENDED FOR YOU',
         mediaData : data,
         type: type
       });

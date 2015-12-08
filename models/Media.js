@@ -12,6 +12,7 @@ function findAll(type, callback){
     // "type": type
   // };
 
+  console.log(query);
   db.query(query, function(err, results){
     if(err) callback(err.message);
     else{
@@ -30,6 +31,7 @@ function insert(username, callback){
     "username": username
   };
 
+  console.log(query, params);
   db.query(query, params, function(err, results){
     if(err) callback(err.message);
     callback(true);
@@ -67,6 +69,7 @@ function recommend(username, type, callback){
     'username' : username
   }
 
+  console.log(query, params);
   db.query(query, params, function(err, results){
     if(err) callback(err.message);
     else{

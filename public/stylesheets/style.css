@@ -2,35 +2,18 @@
   box-sizing: border-box;
 }
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url(/images/bg.png);
+  background-image: url(/images/_bg1.png);
   -webkit-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-
-a {
-  color: #15c;
-  font-size: 14px;
-  display: inline-block;
-  border: 1px solid #15c;
-  padding: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  background-color: rgba(255,255,255,.5);
-}
-
-a:hover {
-  background-color: #15c;
-  border: 1px solid #15c;
-  color: #FFF;
-}
-
 
 .list-media{
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-top: 10px;
 }
 
 .list-media li{
@@ -81,12 +64,66 @@ a:hover {
   background-color: rgba(255,255,255,.5);
 }
 
-.search-box{
+.login-form{
+  margin-top: 50px;
+}
+
+.js-title-action{
+  display: none;
+}
+
+.js-title{
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.4);
+}
+
+.js-title.movie span[data-type='movie']{
+  display: inline-block;
+  border-bottom: 2px dashed #e51c23;
+  color: #e51c23;
+}
+
+.js-title.song span[data-type='song']{
+  display: inline-block;
+  border-bottom: 2px dashed #0c7cd5;
+  color: #0c7cd5;
+}
+
+.js-title.book span[data-type='book']{
+  display: inline-block;
+  border-bottom: 2px dashed #3d8b40;
+  color: #3d8b40;
+}
+
+.js-title.movie .js-default,
+.js-title.song .js-default,
+.js-title.book .js-default{
+  display: none;
+}
+
+.js-title .js-default{
+  border-bottom: 2px dashed #333;
+}
+
+.select-type{
+  margin-top: 50px;
+}
+
+.select-type .btn{
   width: 100%;
-  max-width: 600px;
-  font-size: 20px;
-  margin: 10px 5px;
-  border-radius: 3px;
-  border: 1px solid #555;
-  padding: 5px;
+  padding: 20px;
+}
+
+@media(max-width: 720px){
+  .js-title.movie .js-default,
+  .js-title.song .js-default,
+  .js-title.book .js-default{
+    display: none;
+  }
+
+  .js-title.movie span[data-type='movie'],
+  .js-title.song span[data-type='song'],
+  .js-title.book span[data-type='book']{
+    display: table;
+    margin: 0 auto;
+  }
 }

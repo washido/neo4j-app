@@ -1,17 +1,23 @@
 extends ../layout
 
 block content
-  a(href="/") VOLTAR
-  h1= title
+  //- a(href="/") VOLTAR
 
   #media
-    input.search-box.search(type="text", placeholder="Search your "+type)
+    .panel.panel-default
+        .panel-heading
+          a(href="/") Home
+          span &nbsp;/&nbsp;
+          = title
+        .panel-body
+          label.text-primary If you want, you can search in this list.
+          input.search-box.search.form-control(type="text", placeholder="Search your "+type)
 
-    ul.list-media.list
-      each val, index in mediaData
-        li.list-item(style={height: '200px', 'width': '200px'} data-src=val.image, data-title=val.title)
-          a.js-active(href="javascript:void(0)" data-id=val.id, data-type=type)
-          span.title= val.title
+          ul.list-media.list
+            each val, index in mediaData
+              li.list-item(style={height: '200px', 'width': '200px'} data-src=val.image, data-title=val.title)
+                a.js-active(href="javascript:void(0)" data-id=val.id, data-type=type)
+                span.title= val.title
 
 
   script.

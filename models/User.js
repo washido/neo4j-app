@@ -12,6 +12,7 @@ function find(username, callback){
     "username": username
   };
 
+  console.log(query, params);
   db.query(query, params, function(err, results){
     if(err) callback(err.message);
     var data = results.map(function (result) {
@@ -28,6 +29,7 @@ function insert(username, callback){
     "username": username
   };
 
+  console.log(query, params);
   db.query(query, params, function(err, results){
     if(err) callback(err.message);
     callback(true);
@@ -58,6 +60,7 @@ function removeMedia(params, callback){
     'RETURN u, m'
   ].join('\n');
 
+  console.log(query);
   db.query(query, function(err, results){
     if(err) callback(err.message);
     else callback(null,results);
@@ -79,6 +82,8 @@ function addMedia(params, callback){
     'RETURN u, n'
   ].join('\n');
 
+
+  console.log(query);
   db.query(query, function(err, results){
     if(err) callback(err.message);
     else callback(null, results);
