@@ -46,7 +46,7 @@ RETURN u, m
 ```
 
 ## RECOMMEND SOMETHING
-MATCH 
+```MATCH 
   (me)-->(s)<--(p)
 WHERE 
   me.username = 'icaromh'
@@ -59,6 +59,10 @@ WHERE
   NOT (me)--(n)
   AND n:Book
 RETURN n
+```
 
-http://jquery.eisbehr.de/lazy/
-http://www.listjs.com/
+Third party scripts:
+
+- http://jquery.eisbehr.de/lazy/
+
+- http://www.listjs.com/
