@@ -46,7 +46,8 @@ RETURN u, m
 ```
 
 ## RECOMMEND SOMETHING
-```MATCH 
+```
+MATCH 
   (me)-->(s)<--(p)
 WHERE 
   me.username = 'icaromh'
