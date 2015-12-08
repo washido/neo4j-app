@@ -1,3 +1,15 @@
+# Screens
+
+Login
+![Login](https://raw.githubusercontent.com/washido/neo4j-app/master/public/images/screen-login.png)
+
+Choose Recommendation
+![Choose](https://raw.githubusercontent.com/washido/neo4j-app/master/public/images/screen-choose.png)
+
+Recommendations
+![Recomendations](https://raw.githubusercontent.com/washido/neo4j-app/master/public/images/screen-recommend.png)
+
+
 # READ CSV and IMPORT
 
 ## SONGS
