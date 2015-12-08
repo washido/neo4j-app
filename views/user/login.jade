@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h1 Washido
+  .login
+    p Para entrar no sistema digite o seu usuário e divirta-se
+    form(action="/user/login", method="POST")
+      label User
+      input.form-control(type="text", name="username")
+      button(type="submit") Entrar

@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  a(href="/") VOLTAR
+  h1= title
+
+  #media
+    input.search-box.search(type="text", placeholder="Search your "+type)
+
+    ul.list-media.list
+      each val, index in mediaData
+        li.list-item(style={height: '200px', 'width': '200px'} data-src=val.image, data-title=val.title)
+          a.js-active(href="javascript:void(0)" data-id=val.id, data-type=type)
+          span.title= val.title

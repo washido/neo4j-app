@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+  a(href="/") VOLTAR
+  h1= title
+
+  #media
+    input.search-box.search(type="text", placeholder="Search your "+type)
+
+    ul.list-media.list
+      each val, index in mediaData
+        li.list-item(style={height: '200px', 'width': '200px'} data-src=val.image, data-title=val.title)
+          a.js-active(href="javascript:void(0)" data-id=val.id, data-type=type)
+          span.title= val.title
+
+
+  script.
+    $(function() {
+
+      // lazy load images
+      $('.list-media li').lazy();
+
+      // filter results
+      var options = {
+        valueNames: [ 'title' ]
+      };
+      var userList = new List('media', options);
+
+      // add relation
+      $('#media').on('click', '.js-active', function(){
+        $el = $(this);
+        $.ajax({
+          "method" : "post",
+          "url": "/user/addMedia",
+          "dataType": "JSON",
+          "data": {
+            "type" : $el.data("type"),
+            "id": $el.data('id')
+          },
+          success: function(data){
+            console.log(data);
+          }
+        }).fail(function(err){
+          console.log(err)
+        });
+      });
+    });

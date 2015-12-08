@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  span Select your 
+  a(href="/media/Movie") Movies
+  a(href="/media/Song") Songs
+  a(href="/media/Book") Books
+
+  
+  hr
+
+  h1 recommend me
+  a(href="/recommend/Movie") Movies
+
+  a(href="/recommend/Song") Songs
+  
+  a(href="/recommend/Book") Books
