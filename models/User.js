@@ -1,5 +1,5 @@
 var neo4j = require('neo4j');
-var db    = new neo4j.GraphDatabase('http://neo4j:admin@localhost:7474');
+var db    = new neo4j.GraphDatabase(process.env.GRAPHENEDB_URL ||'http://neo4j:admin@localhost:7474');
 
 function find(username, callback){
   var query = [
